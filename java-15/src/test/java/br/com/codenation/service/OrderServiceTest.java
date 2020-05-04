@@ -1,5 +1,6 @@
 package br.com.codenation.service;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class OrderServiceTest {
 		List<OrderItem> items = new ArrayList<>();
 		items.add(new OrderItem(1l, 3l));
 		items.add(new OrderItem(2l, 2l));
+		assertEquals(850, this.orderService.calculateOrderValue(items), 0.00001);
 		assertNotNull(this.orderService.calculateOrderValue(items));
 	}
 
@@ -40,6 +42,7 @@ public class OrderServiceTest {
 		List<OrderItem> items3 = new ArrayList<>();
 		items.add(new OrderItem(1l, 3l));
 		items.add(new OrderItem(2l, 2l));
+		System.out.println(this.orderService.calculateMultipleOrders(Arrays.asList(items, items2, items3)));
 		assertNotNull(this.orderService.calculateMultipleOrders(Arrays.asList(items, items2, items3)));
 	}
 

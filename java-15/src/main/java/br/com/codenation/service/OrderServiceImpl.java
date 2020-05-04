@@ -20,10 +20,9 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public Double calculateOrderValue(List<OrderItem> items) {
 
-		return items.stream().map(i -> {
-
-			return productRepository.findById(i.getProductId()).get().getValue() * i.getQuantity();
-		}).findFirst().get();
+		return items.stream().mapToDouble(item -> {
+			return productRepository.findById(item.getProductId()).get().getValue() * item.getQuantity();
+		}).sum();
 
 	}
 
@@ -40,6 +39,8 @@ public class OrderServiceImpl implements OrderService {
 	 */
 	@Override
 	public Double calculateMultipleOrders(List<List<OrderItem>> orders) {
+		// return (Double) orders.stream().map(order ->
+		// calculateOrderValue(order)).mapToDouble(Double::doubleValue).sum();
 		return null;
 	}
 
