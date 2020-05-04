@@ -32,7 +32,7 @@ public class OrderServiceImpl implements OrderService {
 	 */
 	@Override
 	public Set<Product> findProductsById(List<Long> ids) {
-		return null;
+		return ids.stream().map(id -> productRepository.findById(id.longValue()).get()).collect(Collectors.toSet());
 	}
 
 	/**
