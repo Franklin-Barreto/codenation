@@ -2,6 +2,7 @@ package br.com.codenation.service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -47,7 +48,8 @@ public class OrderServiceImpl implements OrderService {
 	 */
 	@Override
 	public Map<Boolean, List<Product>> groupProductsBySale(List<Long> productIds) {
-		return null;
+		return productIds.stream().map(id -> productRepository.findById(id).get())
+				.collect(Collectors.groupingBy(Product::getIsSale));
 	}
 
 }
