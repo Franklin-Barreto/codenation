@@ -1,6 +1,5 @@
 package br.com.codenation.service;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
@@ -28,6 +27,7 @@ public class OrderServiceTest {
 	@Test
 	public void testFindProductsById() {
 		assertNotNull(this.orderService.findProductsById(Arrays.asList(1l, 2l, 3l, 4l, 5l)).size());
+
 	}
 
 	@Test
