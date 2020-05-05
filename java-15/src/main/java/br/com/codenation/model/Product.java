@@ -28,7 +28,7 @@ public class Product {
 
 	public Double getValue() {
 
-		return isSale == true ? value * 0.8 : value;
+		 return isSale == true ? value * 0.8 : value;
 	}
 
 	public Boolean getIsSale() {

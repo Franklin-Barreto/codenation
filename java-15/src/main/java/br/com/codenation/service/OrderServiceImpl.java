@@ -20,9 +20,10 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public Double calculateOrderValue(List<OrderItem> items) {
 
-		return items.stream().mapToDouble(item -> {
-			return productRepository.findById(item.getProductId()).get().getValue() * item.getQuantity();
-		}).sum();
+		return items.stream()
+				.mapToDouble(
+						item -> productRepository.findById(item.getProductId()).get().getValue() * item.getQuantity())
+				.sum();
 
 	}
 

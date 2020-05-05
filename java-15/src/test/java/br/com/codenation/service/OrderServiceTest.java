@@ -19,8 +19,8 @@ public class OrderServiceTest {
 	@Test
 	public void testCalculateOrderValue() {
 		List<OrderItem> items = new ArrayList<>();
-		items.add(new OrderItem(1l, 3l));
-		items.add(new OrderItem(2l, 2l));
+		items.add(new OrderItem(8l, 3l));
+		items.add(new OrderItem(7l, 2l));
 		assertNotNull(this.orderService.calculateOrderValue(items));
 	}
 
