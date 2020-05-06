@@ -1,5 +1,6 @@
 package com.challenge.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,6 +23,7 @@ public class UserService implements UserServiceInterface {
 
 	@Override
 	public User save(User object) {
+		object.setCreatedAt(LocalDateTime.now());
 		return this.userRepository.save(object);
 	}
 

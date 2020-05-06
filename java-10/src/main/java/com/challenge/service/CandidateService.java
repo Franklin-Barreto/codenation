@@ -32,18 +32,16 @@ public class CandidateService implements CandidateServiceInterface {
 
 	@Override
 	public Optional<Candidate> findById(Long userId, Long companyId, Long accelerationId) {
-		//return this.candidateRepository.findById_UserId_CompanyId_AccelerationId(userId, companyId, accelerationId);
-		return null;
+		return this.candidateRepository.findById(userId, companyId, accelerationId);
 	}
 
 	@Override
 	public List<Candidate> findByCompanyId(Long companyId) {
-		return this.candidateRepository.findById_Company(companyId);
+		return this.candidateRepository.findById_CompanyId(companyId);
 	}
 
 	@Override
 	public List<Candidate> findByAccelerationId(Long accelerationId) {
-		System.out.println("Teste"+accelerationId);
 		return this.candidateRepository.findById_AccelerationId(accelerationId);
 	}
 

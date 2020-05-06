@@ -15,7 +15,7 @@ public interface CandidateRepository extends JpaRepository<Candidate, CandidateI
 	@Query("SELECT c FROM Candidate c WHERE c.id.user =?1 and c.id.company = ?2 and c.id.acceleration =?3 ")
 	public Optional<Candidate> findById(Long userId, Long companyId, Long accelerationId);
 	
-	public List<Candidate> findById_Company(Long company);
+	public List<Candidate> findById_CompanyId(Long companyId);
 	
 	public List<Candidate> findById_AccelerationId(Long acceleration);
 }

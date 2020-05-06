@@ -32,7 +32,6 @@ public class CompanyService implements CompanyServiceInterface {
 
 	@Override
 	public List<Company> findByAccelerationId(Long accelerationId) {
-		// TODO Auto-generated method stub
 		return this.companyRepository.findDistinctByCandidatesIdAccelerationId(accelerationId);
 	}
 
